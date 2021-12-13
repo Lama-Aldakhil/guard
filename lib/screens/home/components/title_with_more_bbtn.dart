@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guard/database.dart';
+import 'package:guard/screens/adding_sensors/adding_senor.dart';
 import '../../../constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
@@ -24,7 +25,11 @@ class TitleWithMoreBtn extends StatelessWidget {
               width: size / 3,
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  print(getData());
+                  // getDocId();
+                  updateData("BME680", "Status ", false);
+                  // readData("BME688", "Name ");
+                  // getReadings("BME688");
+                  // hi();
                 },
                 icon: Icon(
                   Icons.add,

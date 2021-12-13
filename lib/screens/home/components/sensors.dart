@@ -1,15 +1,15 @@
 // ignore_for_file: file_names
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:guard/screens/details/details_screen.dart';
+import 'package:guard/screens/details/details_screen1.dart';
 import 'package:guard/database.dart';
+import 'package:guard/screens/details/details_screen2.dart';
 
 import '../../../constants.dart';
 
 class sensors extends StatelessWidget {
-  sensors({
-    Key? key,
-  }) : super(key: key);
+  final String name1 = "BME680";
+  final String name2 = "LTR-559";
 
   @override
   Widget build(BuildContext context) {
@@ -17,34 +17,38 @@ class sensors extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          for (int i = 0; i < 5; i++)
-            sensorsCards(
-              image: "assets/images/air_quality.png",
-              title: SensorName(),
-              name: "BME00$i",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(),
-                  ),
-                );
-              },
-            ),
+          //for (int i = 0; i < 5; i++)
 
-          // sensorsCards(
-          //   image: "assets/images/light.png",
-          //   title: "Light & Motion",
-          //   name: "BMEXXX",
-          //   press: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => DetailsScreen(),
-          //       ),
-          //     );
-          //   },
-          // ),
+          //if()
+          sensorsCards(
+            image: "assets/images/air_quality.png",
+            title: "Air Quality",
+            name: name1,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(
+                    name: name1,
+                  ),
+                ),
+              );
+            },
+          ),
+
+          sensorsCards(
+            image: "assets/images/light.png",
+            title: "Light & Proximity",
+            name: name2,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen2(name: "x"),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

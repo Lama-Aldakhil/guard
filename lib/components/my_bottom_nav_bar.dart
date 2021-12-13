@@ -33,20 +33,20 @@ class MyBottomNavBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.home,
-              color: Colors.grey,
-              size: 35,
-            ),
-            //Image.asset("assets/images/home.png"),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
               Icons.person,
               color: Colors.grey,
               size: 35,
             ),
             //icon: SvgPicture.asset("assets/icons/user-icon.svg"),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+              size: 35,
+            ),
+            //Image.asset("assets/images/home.png"),
             onPressed: () {},
           ),
           IconButton(
